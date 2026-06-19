@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="800">
+  <style>
+    rect { fill: #f5f5f5; stroke: #333; stroke-width: 2; rx: 10; ry: 10; }
+    text { font-family: Arial, sans-serif; font-size: 14px; fill: #000; }
+    line { stroke: #333; stroke-width: 2; marker-end: url(#arrow); }
+    .title { font-size: 20px; font-weight: bold; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,3 L0,6 Z" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="300" y="40" class="title">DLX Multi-Socket Data Center Server Architecture</text>
+
+  <!-- Socket 0 -->
+  <rect x="60" y="80" width="220" height="200" />
+  <text x="120" y="100" font-weight="bold">Socket 0 (NUMA0)</text>
+  <text x="90" y="130">DLX Core Cluster</text>
+  <text x="90" y="150">L1 I/D Cache</text>
+  <text x="90" y="170">L2 / L3 Shared Cache</text>
+  <text x="90" y="190">Memory Ctrl + Directory</text>
+
+  <!-- Socket 1 -->
+  <rect x="360" y="80" width="220" height="200" />
+  <text x="420" y="100" font-weight="bold">Socket 1 (NUMA1)</text>
+  <text x="390" y="130">DLX Core Cluster</text>
+  <text x="390" y="150">L1 I/D Cache</text>
+  <text x="390" y="170">L2 / L3 Shared Cache</text>
+  <text x="390" y="190">Memory Ctrl + Directory</text>
+
+  <!-- Socket N -->
+  <rect x="660" y="80" width="220" height="200" />
+  <text x="725" y="100" font-weight="bold">Socket N (NUMAM)</text>
+  <text x="695" y="130">DLX Core Cluster</text>
+  <text x="695" y="150">L1 I/D Cache</text>
+  <text x="695" y="170">L2 / L3 Shared Cache</text>
+  <text x="695" y="190">Memory Ctrl + Directory</text>
+
+  <!-- Fabric -->
+  <rect x="60" y="320" width="820" height="60" fill="#e0e0e0" stroke="#333" />
+  <text x="310" y="355" font-weight="bold">High-Speed Coherent Interconnect / Fabric</text>
+
+  <!-- Lines from sockets to fabric -->
+  <line x1="170" y1="280" x2="170" y2="320" />
+  <line x1="470" y1="280" x2="470" y2="320" />
+  <line x1="770" y1="280" x2="770" y2="320" />
+
+  <!-- I/O Hub -->
+  <rect x="260" y="420" width="420" height="200" />
+  <text x="430" y="440" font-weight="bold">I/O & Management Hub</text>
+  <text x="300" y="470">• PCIe Gen5/6 Root Complex</text>
+  <text x="300" y="490">• NVMe Storage / Controllers</text>
+  <text x="300" y="510">• 200–400GbE RDMA NICs</text>
+  <text x="300" y="530">• BMC / Redfish / TPM</text>
+  <text x="300" y="550">• CXL / Accelerator Interface</text>
+
+  <!-- Line from Fabric to IO -->
+  <line x1="470" y1="380" x2="470" y2="420" />
+
+  <!-- Chassis outline -->
+  <rect x="30" y="60" width="880" height="600" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="6,6" />
+  <text x="400" y="690" font-size="12" fill="#555">DLX Multi-Socket Server Node (Chassis Boundary)</text>
+</svg>
